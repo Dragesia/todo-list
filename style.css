@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=VT323');
+
+:root {
+    --dark: #191919;
+    --light: #CED0CE;
+    --plat: #E6E8E6;
+    --orange: #F15025;
+}
+
+/* General */
+
+html, body {
+    font-size: 10px;
+    box-sizing: border-box;
+    font-family: 'VT323';
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
