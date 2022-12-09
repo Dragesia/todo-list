@@ -25,6 +25,10 @@ html, body {
     user-select: none; /* Standard */
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* Header */
 
 .header {
@@ -125,6 +129,8 @@ html, body {
     color: var(--plat);
 }
 
+/* Modal */
+
 .modal {
     position: fixed;
     top: 0;
@@ -137,6 +143,8 @@ html, body {
     justify-content: center;
     align-items: center;
 }
+
+/* Todo Modal */
 
 .todo-modal {
     background-color: var(--plat);

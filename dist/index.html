@@ -12,32 +12,34 @@
     <div class="list-add">Add new list +</div>
     <div class="header">PIXEL TODO</div>
     <div class="home"></div>
-    <div class="modal">
-        <div class="todo-modal">
-            <div class="title-div">
-                <label for="title">Title</label>
-                <input type="text" name="title" id="title" required>
-            </div>
-            <div class="rest-div">
-                <div class="date-div">
-                    <label for="date">Due Date</label>
-                    <input type="date" name="date" id="date">
+    <div class="modal hidden">
+        <form action="#">
+            <div class="todo-modal hidden">
+                <div class="title-div">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required>
                 </div>
-                <div class="pri-div">
-                    <label for="priority">Priority</label>
-                    <select name="priority" id="priority">
-                        <option value="Low">Low</option>
-                        <option value="Medium">Medium</option>
-                        <option value="High">High</option>
-                    </select>
+                <div class="rest-div">
+                    <div class="date-div">
+                        <label for="date">Due Date</label>
+                        <input type="date" name="date" id="date" required>
+                    </div>
+                    <div class="pri-div">
+                        <label for="priority">Priority</label>
+                        <select name="priority" id="priority">
+                            <option value="Low" selected>Low</option>
+                            <option value="Medium">Medium</option>
+                            <option value="High">High</option>
+                        </select>
+                    </div>
                 </div>
+                <div class="buttons-div">
+                    <button id="create">Create</button>
+                    <button id="cancel">Cancel</button>
+                </div>
+                
             </div>
-            <div class="buttons-div">
-                <button id="create">Create</button>
-                <button id="cancel">Cancel</button>
-            </div>
-            
-        </div>
+        </form>
     </div>
 </body>
 </html>
