@@ -13,7 +13,7 @@ html, body {
     font-size: 10px;
     box-sizing: border-box;
     font-family: 'VT323';
-    background-color: var(--light);
+    background-color: var(--plat);
 }
 
 * {
@@ -24,3 +24,91 @@ html, body {
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
+
+/* Priorities */
+
+.high {background-color: darkred;}
+.medium {background-color: darkgoldenrod}
+.low {background-color: darkgreen;}
+
+/* Header */
+
+.header {
+    width: 100%;
+    height: 58px;
+    background-color: var(--orange);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.header-first, .header-last {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-last {
+    justify-content: flex-end;
+}
+
+.sidebar-btn, .add-todo {
+    align-self: center;
+    border: 0;
+    border-radius: 7px;
+    outline: 0;
+    background-color: var(--orange);
+    color: var(--plat);
+    font-size: 3rem;
+    cursor: pointer;
+    height: 45px;
+    width: 45px;
+} .sidebar-btn:hover, .add-todo:hover {background-color: #d44720;}
+
+.sidebar-btn {
+    margin-left: 300px;
+    transition: all 0.2s;
+}
+.add-todo {margin-right: 300px;}
+
+/* Sidebar */
+
+.sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--light);
+    overflow-x: hidden;
+    transition: 0.15s;
+    padding-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar button {
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    padding: 8px 8px 8px 8px;
+    color: var(--dark);
+    background-color: var(--light);
+    font-size: 1.55rem;
+    display: block;
+    transition: 0.1s;
+    width: 80%;
+    text-align: left;
+} .sidebar button:hover {background-color: #c9c9c9;}
+
+.projects {
+    margin-top: 10px;
+}
+
+.dropdown-container {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+

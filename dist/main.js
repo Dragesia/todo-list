@@ -1,0 +1,1 @@
+(()=>{"use strict";document.querySelector(".sidebar-btn").onclick=function(){const e=document.querySelector(".sidebar");"250px"==e.style.width?e.style.width=0:e.style.width="250px"};const e=document.querySelector(".projects"),t=document.querySelector(".dropdown-container");e.onclick=()=>{"none"===t.style.display?t.style.display="flex":t.style.display="none"}})();
