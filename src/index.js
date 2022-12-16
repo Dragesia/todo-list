@@ -17,18 +17,6 @@ dropdownBtn.onclick = () => {
 const edit = document.querySelector(".edit");
 const change = document.querySelector(".change");
 
-// edit.onclick = () => {
-//     change.disabled = false;
-//     change.focus();
-// }
-
-// change.onblur = () => {
-//     change.disabled = true;
-// }
-// change.onkeypress = (e) => {
-//     if (e.key === "Enter") change.disabled = true;
-// }
-
 const newProject = document.querySelector(".add");
 newProject.onclick = () => {
     const project = document.createElement("button");
