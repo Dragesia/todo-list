@@ -177,3 +177,86 @@ html, body {
     margin-left: 10px;
 }
 
+/* Todo Container */
+
+.todo-container {
+    height: 500px;
+    max-width: 100%;
+    margin-left: 250px;
+    margin-right: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-container > div {
+    border-radius: 10px;
+    width: 95%;
+    height: 50px;
+    margin-top: 20px;
+    background-color: #e2e2e2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.todo-text {
+    outline: 0;
+    border: 0;
+    border-radius: 5px;
+    width: 90%;
+    font-size: 3rem;
+}
+.todo-text:disabled {
+    background-color: transparent;
+}
+
+.todo-text:focus {
+    background-color: white;
+}
+
+.todo-ico {
+    font-size: 3rem !important;
+}
+
+.fa-trash {
+    color: red;
+}
+
+.check {
+    -webkit-appearance: none; /*hides the default checkbox*/
+    height: 20px;
+    width: 20px;
+    transition: 0.10s;
+    background-color: #FE0006;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+    border-radius: 3px;
+    outline: none;
+  }
+  
+  .check:checked {
+    background-color: #0E9700;
+  }
+  
+  .check:before {
+    position: relative;
+    top: 3px;
+    right: 0.2px;
+    content: "-";
+  }
+  .check:checked:before {
+    content: "✔";
+    position: relative;
+    top: 3px;
+    right: 0.3px;
+  }
+  
+  .check:hover {
+    cursor: pointer; 
+    opacity: 0.8;
+  }
+
