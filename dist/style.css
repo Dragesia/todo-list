@@ -192,7 +192,7 @@ html, body {
 .todo-container > div {
     border-radius: 10px;
     width: 95%;
-    height: 50px;
+    min-height: 50px;
     margin-top: 20px;
     background-color: #e2e2e2;
     display: flex;
@@ -208,6 +208,7 @@ html, body {
     border-radius: 5px;
     width: 90%;
     font-size: 3rem;
+    color: var(--dark);
 }
 .todo-text:disabled {
     background-color: transparent;
@@ -219,6 +220,7 @@ html, body {
 
 .todo-ico {
     font-size: 3rem !important;
+    cursor: pointer;
 }
 
 .fa-trash {

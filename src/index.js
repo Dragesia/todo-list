@@ -52,3 +52,52 @@ newProject.onclick = () => {
 
     text.focus();
 }
+
+const todoCont = document.querySelector(".todo-container");
+const todoAdd = document.querySelector(".add-todo");
+
+todoAdd.onclick = () => {
+    const newTodo = document.createElement("div");
+
+    const todoCheck = document.createElement("input");
+    todoCheck.setAttribute("type", "checkbox");
+    todoCheck.setAttribute("name", "switch");
+    todoCheck.classList.add("check");
+    
+    const todoInp = document.createElement("input");
+    todoInp.setAttribute("type", "text");
+    todoInp.classList.add("todo-text");
+
+    const todoEdit = document.createElement("i");
+    todoEdit.classList.add("fa");
+    todoEdit.classList.add("fa-pencil");
+    todoEdit.classList.add("todo-ico");
+
+    const todoDel = document.createElement("i");
+    todoDel.classList.add("fa");
+    todoDel.classList.add("fa-trash");
+    todoDel.classList.add("todo-ico");
+
+    todoInp.onblur = () => {
+        todoInp.disabled = true;
+    }
+    todoInp.onkeypress = (e) => {
+        if (e.key === "Enter") todoInp.disabled = true;
+    }
+    todoEdit.onclick = () => {
+        todoInp.disabled = false;
+        todoInp.focus();
+    }
+    todoDel.onclick = () => {
+        todoCont.removeChild(newTodo);
+    }
+
+    newTodo.appendChild(todoCheck);
+    newTodo.appendChild(todoInp);
+    newTodo.appendChild(todoEdit);
+    newTodo.appendChild(todoDel);
+
+    todoCont.appendChild(newTodo);
+
+    todoInp.focus();
+}
