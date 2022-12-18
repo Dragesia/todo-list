@@ -29,6 +29,10 @@ html, body {
     background-color: #bebebe !important;
 }
 
+.hidden {
+    display: none !important;
+}
+
 /* Priorities */
 
 .high {background-color: darkred;}

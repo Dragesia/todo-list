@@ -1,5 +1,9 @@
 import toggleNav from './sidebar';
 
+const body = document.querySelector("body");
+
+// Sidebar DOM
+
 document.querySelector(".sidebar-btn").onclick = toggleNav;
 
 const dropdownBtn = document.querySelector(".projects");
@@ -14,11 +18,32 @@ dropdownBtn.onclick = () => {
     }
 }
 
+// Sidebar - Projects 
+
+let nonProjects = document.querySelectorAll(".sidebar > button");
+let projectArr = document.querySelectorAll(".todo-container");
+
+const today = document.querySelector(".today");
+
+nonProjects.forEach(el => {
+    el.onclick = () => {
+        projectArr = document.querySelectorAll(".todo-container");
+        projectArr.forEach(pr => pr.style.display = "none");
+        today.style.display = "flex";
+    }
+})
+
 const edit = document.querySelector(".edit");
 const change = document.querySelector(".change");
 
 const newProject = document.querySelector(".add");
 newProject.onclick = () => {
+    const projectContainer = document.createElement("div");
+    projectContainer.classList.add("todo-container");
+    projectContainer.style.display = "none";
+
+    body.appendChild(projectContainer);
+
     const project = document.createElement("button");
 
     const priority = document.createElement("span");
@@ -29,10 +54,19 @@ newProject.onclick = () => {
     text.setAttribute("type", "text");
     text.classList.add("change");
     text.onblur = () => {
+        if (text.value == 0) {
+            dropdown.removeChild(project);
+            body.removeChild(projectContainer);
+        }
+        projectArr = document.querySelectorAll(".todo-container");
+        projectContainer.classList.add(text.value);
         text.disabled = true;
     }
     text.onkeypress = (e) => {
-        if (e.key === "Enter") text.disabled = true;
+        if (e.key === "Enter") {
+            text.disabled = true;
+            projectContainer.classList.add(text.value);
+        }
     }
     
     const editBtn = document.createElement("i");
@@ -51,9 +85,20 @@ newProject.onclick = () => {
     dropdown.appendChild(project);
 
     text.focus();
+
+    project.onclick = () => {
+        todoCont = projectContainer;
+        projectArr = document.querySelectorAll(".todo-container");
+        projectArr.forEach(element => {
+            element.style.display = "none";
+        });
+        projectContainer.style.display = "flex";
+    }
 }
 
-const todoCont = document.querySelector(".todo-container");
+// TODOS DOM
+
+let todoCont = document.querySelector(".today");
 const todoAdd = document.querySelector(".add-todo");
 
 todoAdd.onclick = () => {
@@ -79,6 +124,7 @@ todoAdd.onclick = () => {
     todoDel.classList.add("todo-ico");
 
     todoInp.onblur = () => {
+        if (todoInp.value == 0) todoCont.removeChild(newTodo);
         todoInp.disabled = true;
     }
     todoInp.onkeypress = (e) => {
