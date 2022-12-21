@@ -161,7 +161,7 @@ html, body {
     outline: 0;
     border: 0;
     border-radius: 5px;
-    width: 78%;
+    width: 71%;
     font-size: 1.55rem;
     display: inline;
     color: var(--dark);
@@ -178,7 +178,10 @@ html, body {
 
 .fa-pencil {
     color: rgb(128, 128, 128);
-    margin-left: 10px;
+    margin-left: 5px;
+}
+.fa-trash {
+    margin-left:5px;
 }
 
 /* Todo Container */

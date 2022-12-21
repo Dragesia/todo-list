@@ -47,6 +47,18 @@ newProject.onclick = () => {
     const priority = document.createElement("span");
     priority.classList.add("dot");
     priority.classList.add("low");
+    priority.onclick = () => {
+        if (priority.classList.contains("low")) {
+            priority.classList.remove("low");
+            priority.classList.add("medium");
+        } else if (priority.classList.contains("medium")) {
+            priority.classList.remove("medium");
+            priority.classList.add("high");
+        } else {
+            priority.classList.remove("high");
+            priority.classList.add("low");
+        }
+    }
 
     const text = document.createElement("input");
     text.setAttribute("type", "text");
@@ -76,9 +88,18 @@ newProject.onclick = () => {
         text.focus();
     }
 
+    const delBtn = document.createElement("i");
+    delBtn.classList.add("fa");
+    delBtn.classList.add("fa-trash");
+    delBtn.onclick = () => {
+        dropdown.removeChild(project);
+        body.removeChild(projectContainer);
+    }
+
     project.appendChild(priority);
     project.appendChild(text);
     project.appendChild(editBtn);
+    project.appendChild(delBtn);
 
     dropdown.appendChild(project);
 
@@ -152,7 +173,6 @@ todoAdd.onclick = () => {
 // it's here because bug
 
 dropdownBtn.onclick = () => {
-    console.log("Onclick çalışıyor");
     dropdownIco.classList.toggle("up");
     if (dropdown.style.display === "none") {
         dropdown.style.display = "flex";
