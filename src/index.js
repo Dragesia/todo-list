@@ -9,17 +9,10 @@ document.querySelector(".sidebar-btn").onclick = toggleNav;
 const dropdownBtn = document.querySelector(".projects");
 const dropdownIco = document.querySelector(".arrow");
 const dropdown = document.querySelector(".dropdown-container");
-dropdownBtn.onclick = () => {
-    dropdownIco.classList.toggle("up");
-    if (dropdown.style.display === "none") {
-        dropdown.style.display = "flex";
-    } else {
-        dropdown.style.display = "none";
-    }
-}
 
 // Sidebar - Projects 
 
+let forHoverProjects = document.querySelectorAll(".sidebar button");
 let nonProjects = document.querySelectorAll(".sidebar > button");
 let projectArr = document.querySelectorAll(".todo-container");
 
@@ -27,7 +20,12 @@ const today = document.querySelector(".today");
 
 nonProjects.forEach(el => {
     el.onclick = () => {
+        if(el.classList.contains("projects")) return;
+        forHoverProjects = document.querySelectorAll(".sidebar button");
+        forHoverProjects.forEach(fhp => fhp.classList.remove("active"));
+        el.classList.add("active");
         projectArr = document.querySelectorAll(".todo-container");
+        todoCont = today;
         projectArr.forEach(pr => pr.style.display = "none");
         today.style.display = "flex";
     }
@@ -87,6 +85,9 @@ newProject.onclick = () => {
     text.focus();
 
     project.onclick = () => {
+        forHoverProjects = document.querySelectorAll(".sidebar button");
+        forHoverProjects.forEach(fhp => fhp.classList.remove("active"));
+        project.classList.add("active");
         todoCont = projectContainer;
         projectArr = document.querySelectorAll(".todo-container");
         projectArr.forEach(element => {
@@ -146,4 +147,16 @@ todoAdd.onclick = () => {
     todoCont.appendChild(newTodo);
 
     todoInp.focus();
+}
+
+// it's here because bug
+
+dropdownBtn.onclick = () => {
+    console.log("Onclick çalışıyor");
+    dropdownIco.classList.toggle("up");
+    if (dropdown.style.display === "none") {
+        dropdown.style.display = "flex";
+    } else {
+        dropdown.style.display = "none";
+    }
 }
